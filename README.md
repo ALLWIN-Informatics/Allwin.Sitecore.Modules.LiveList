@@ -2,16 +2,16 @@
 
 ## Purpose of the module
 
-We agreed upon a list  module that can render almost anything, but we didn’t stop there and  added another functionality. To make this list update in real time for the  viewer. 
+We agreed upon a list module that can render almost anything, but we didn’t stop there and  added another functionality. To make this list update in real time for the viewer. 
 
-We chose **SignalR** for the technologyt hat we want to learn and we used  that to make a websocket connection between Sitecore and the browser.  We were trying to make a list that would be versitile enough and could be  used in various situations. So we came to the conclusion that we should be  able to render almost anything into this list. We built this module to be as  general as possible from the ground up. 
+We chose **SignalR** for the technology that we want to learn and we used  that to make a websocket connection between Sitecore and the browser.  We were trying to make a list that would be versitile enough and could be used in various situations. So we came to the conclusion that we should be able to render almost anything into this list. We built this module to be as general as possible from the ground up. 
 
-We hope that the easy usage and the simple setup will help people set  up this list on their main page and help them keep in thouch with  customers, visitors or passangers.
+We hope that the easy usage and the simple setup will help people set up this list on their main page and help them keep in thouch with customers, visitors or passangers.
 
 ## How to install to dev environment
 
  1. Clone the repository
- 2. Install clean Sitecore instance here: `c:\Works\Allwin\Sitecore_Hackathon_2017\sitecore\`
+ 2. Install clean Sitecore instance here: `\sitecore\`
  3. Build and publish to solution
  4. Go to `/unicorn.aspx` and Sync all configs
 
