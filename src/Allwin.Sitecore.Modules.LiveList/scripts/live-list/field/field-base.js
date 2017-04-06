@@ -68,8 +68,3 @@ fieldBase.observe = function (targetId, callback) {
     var config = { attributes: true, childList: true, subtree: true, characterData: true };
     observer.observe(target, config);
 };
-
-fieldBase.setupAutoHeight = function setupAutoHeight(selector) {
-    setTimeout(() => updateIframeDisplaySettings(selector), 0); // Force update next cycle
-    return speakWindow.observeMutations(document, () => updateIframeDisplaySettings(selector));
-}
