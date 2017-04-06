@@ -1,6 +1,6 @@
 # Allwin.Sitecore.Modules.LiveList
 
-##Purpose of the module
+## Purpose of the module
 
 We agreed upon a list  module that can render almost anything, but we didn’t stop there and  added another functionality. To make this list update in real time for the  viewer. 
 
@@ -8,19 +8,19 @@ We chose **SignalR** for the technologyt hat we want to learn and we used  that 
 
 We hope that the easy usage and the simple setup will help people set  up this list on their main page and help them keep in thouch with  customers, visitors or passangers.
 
-##How to install to dev environment
+## How to install to dev environment
 
  1. Clone the repository
  2. Install clean Sitecore instance here: `c:\Works\Allwin\Sitecore_Hackathon_2017\sitecore\`
  3. Build and publish to solution
  4. Go to `/unicorn.aspx` and Sync all configs
 
-##How to install to Content Management environment
+## How to install to Content Management environment
 
  1. Install the Sitecore package with **Installation Wizard** (including items and files)
  2. Add the `/sitecore/layout/Renderings/LiveList/LiveList` rendering to your Placeholder Settings where you want to use to make usable in **Experience Editor**
 
-##How to install to Content Delivery environment
+## How to install to Content Delivery environment
 
  1. Do an item publish from **CM** environment and copy the required files to **CD**
 	 1. `\App_Config\Include\Allwin.Sitecore.Modules.LiveList\LiveList.config` - **Remove the following  processor: type="Allwin.Sitecore.Modules.LiveList.Pipelines.RegisterPrivateRoutes"**
@@ -60,5 +60,5 @@ After you installed everything you need create your own **Live Lists**. To creat
 	 1. Here the editors can create their own **Datasources** for the Live List items
 	 2. This folder contains items based on your custom templates
 
-###Here is a tutorial about an older version with integrated in Habitat
+### Here is a tutorial about an older version with integrated in Habitat
 [![YouTube Video](https://img.youtube.com/vi/AZje4ROX4dc/0.jpg)](https://www.youtube.com/watch?v=AZje4ROX4dc)
