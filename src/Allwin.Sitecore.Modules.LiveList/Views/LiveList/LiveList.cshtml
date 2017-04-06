@@ -1,0 +1,90 @@
+﻿@using Allwin.Sitecore.Modules.LiveList.Consts
+@model Allwin.Sitecore.Modules.LiveList.Models.LiveListItemContainer
+
+@{
+    var alreadyIncluded = HttpContext.Current.Items["SignalR_Included"] != null;
+}
+
+@if (!alreadyIncluded)
+{
+    <!-- Required for SingalR -->
+    <script src="/scripts/live-list/jquery-1.6.4.min.js"></script>
+    <script src="/scripts/live-list/jquery.signalR-2.2.1.js"></script>
+    <script src="/signalr/hubs"></script>
+
+    <link href="/styles/live-list/live-list.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function addLiveListItem(parentId, id, message) {
+            var fullId = 'live-list-item-' + id;
+
+            // If it already exists in the list then delete the old DOM element and write a new one to the top
+            if (jQuery('#' + fullId).length) {
+                jQuery('#' + fullId).remove();
+            }
+
+            var fullMessage = '<div id="' + fullId + '" class="live-list-item">' + message + '</div>';
+            jQuery(fullMessage).hide().prependTo('#live-list-'+parentId).slideDown(750).fadeIn(750);
+        }
+    </script>
+}
+
+<!--Add script to update the page and send messages.-->
+<script type="text/javascript">
+    jQuery(function () {
+        var aggregator = jQuery.connection.liveListHub;
+        aggregator.client.refreshLiveList = function (parentId, id, message) {
+            // Render the newly added items
+            addLiveListItem(parentId, id, message);
+        };
+
+        // Start the connection.
+        jQuery.connection.hub.start().done(function () {
+            aggregator.server.joinGroup('@(Model.Id)');
+        });
+
+        jQuery('#show-more-@(Model.Id)').click(function () {
+            // Ajax call for showing more on the list
+            jQuery.ajax({
+                url: "/live-list/LiveList/LoadMore",
+                data: {
+                    parentId: '@(Model.Id)',
+                    lastId: jQuery('#live-list-@(Model.Id) .live-list-item').last().attr('id').replace('live-list-item-', ''),
+                    numberOfItems: @(Model.MaxItemsOnPageLoad),
+                    language: '@(Sitecore.Context.Language.ToString())'
+                },
+                success: function (result) {
+                    jQuery(result).hide().appendTo(jQuery('#live-list-@(Model.Id)')).fadeIn(750);
+
+                    if (result === '') {
+                        jQuery('#show-more-@(Model.Id)').fadeOut(250);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log("status: " + status + "; error: " + error);
+                }
+            });
+        });
+    });
+</script>
+
+<div class="live-list-container">
+    <h3>@Html.Sitecore().Field(Templates.LiveListItemContainer.FieldNames.Title, Model.Item)</h3>
+    <div class="scrolling-live-list-container">
+        <div id="live-list-@(Model.Id)" class="live-list">
+            @foreach (var llItem in Model.Items)
+            {
+                <div id="live-list-item-@(llItem.Guid)" class="live-list-item">
+                    @Html.Raw(llItem.Html)
+                </div>
+            }
+        </div>
+        <div id="show-more-@(Model.Id)" class="show-more-button-container">
+            <span class="show-more-button">@Html.Sitecore().Field(Templates.LiveListItemContainer.FieldNames.ShowMoreText, Model.Item)</span>
+        </div>
+    </div>
+</div>
+
+@{
+    // This helps that the signalR and dependent js files are only included once
+    HttpContext.Current.Items["SignalR_Included"] = true;
+}

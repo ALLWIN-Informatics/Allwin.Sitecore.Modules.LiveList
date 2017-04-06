@@ -1,0 +1,14 @@
+﻿---
+ID: "dd0d2370-ad6c-4615-aa4e-b71e139e9541"
+Parent: "e700ef25-cf4b-4221-b215-ecf0a4dfb636"
+Template: "14c6e3d7-b08c-4e89-80d3-a342cf24059d"
+Path: /sitecore/templates/Branches/LiveList/Live List Folder/$name
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170403T085516Z

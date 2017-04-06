@@ -1,0 +1,18 @@
+﻿---
+ID: "dc41f945-9b8f-4adf-8be5-9765cf46cab5"
+Parent: "dd0d2370-ad6c-4615-aa4e-b71e139e9541"
+Template: "6bdbdd98-af0c-42de-9fd5-a7eabbd0c7ee"
+Path: /sitecore/templates/Branches/LiveList/Live List Folder/$name/Live Lists Folder
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170403T085531Z

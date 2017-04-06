@@ -1,0 +1,26 @@
+﻿---
+ID: "696ad22f-9cf6-4a19-b188-2a80db86b704"
+Parent: "148ea203-5e8d-404d-8dad-5cffee34bf2c"
+Template: "ddd31034-03d0-41d4-bcc8-f21777e72064"
+Path: /sitecore/system/Modules/LiveList/Live Lists Renderings/Sample
+DB: master
+SharedFields:
+- ID: "15354ed9-07bf-45d3-bb5e-18cbaacb2df1"
+  Hint: Allowed Templates
+  Type: Treelist
+  Value: 
+- ID: "2cee9233-dd19-41d4-9c60-30c36256f96a"
+  Hint: Rendering
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170304T214027Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

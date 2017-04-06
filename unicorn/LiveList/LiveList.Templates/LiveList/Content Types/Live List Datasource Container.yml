@@ -1,0 +1,25 @@
+﻿---
+ID: "b4506005-afdc-4f1a-bf6d-00252d007d07"
+Parent: "92d2ff58-4cdc-4f0b-8c9b-858435c941ee"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/LiveList/Content Types/Live List Datasource Container
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Clouds.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{7C142964-EEE7-4AE4-BD4D-71A3128AB8DC}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{45A05227-61A6-44D5-90A6-E72EB68960AE}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170404T074053Z

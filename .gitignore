@@ -1,0 +1,10 @@
+*.dll
+*.suo
+*.user
+bin
+obj
+packages
+.vs
+sitecore/Databases
+sitecore/Data
+sitecore/Website

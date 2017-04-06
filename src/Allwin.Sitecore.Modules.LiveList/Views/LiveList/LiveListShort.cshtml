@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Allwin.Sitecore.Modules.LiveList.Models.LiveListItem>
+
+@foreach (var llItem in Model)
+{
+    <div id="live-list-item-@(llItem.Guid)" class="live-list-item">
+        @Html.Raw(llItem.Html)
+    </div>
+}

@@ -1,0 +1,25 @@
+﻿---
+ID: "b0cd0d5c-ae6b-4a47-878a-974ae71be26a"
+Parent: "92d2ff58-4cdc-4f0b-8c9b-858435c941ee"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/LiveList/Content Types/Live List Rendering Container
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Book 2.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{DD314864-C326-410C-BBA0-758B092C3D50}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{81DA1C11-B878-45B8-99CC-D9B2D0F08BEF}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170304T131316Z

@@ -1,0 +1,14 @@
+﻿---
+ID: "57a08dc8-ca84-461e-b25c-f2b61ab283a9"
+Parent: "fb7df7d9-c71d-461f-98f5-a499bead2995"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/LiveList/Base Templates/_LiveListRenderingItem/Settings
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170304T130735Z

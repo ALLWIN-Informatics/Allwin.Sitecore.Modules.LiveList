@@ -1,0 +1,18 @@
+﻿---
+ID: "0108f3ca-9902-4cab-9560-b31680a4f654"
+Parent: "6368d6fe-5add-46e8-bd6e-df97e6324ef9"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/LiveList/Base Templates/_LiveListContainer/Content
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170304T051308Z

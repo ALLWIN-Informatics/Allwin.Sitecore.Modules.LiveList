@@ -1,0 +1,43 @@
+﻿<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,300,600,700,800" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/sitecore/shell/themes/standard/default/Default.css" />
+<link rel="stylesheet" type="text/css" href="/sitecore/shell/themes/standard/default/Content Manager.css" />
+<style>
+    #ll-fields {
+        padding: 10px 10px 10px 10px;
+    }
+</style>
+<div id="ll-fields" class="scEditorSections">
+    <div class="scEditorFieldMarker">
+        <div class="scEditorFieldLabel"><i></i>Rendering:</div>
+        <div>
+            <select id="ll-renderings" class="scContentControl scCombobox"></select>
+        </div>
+    </div>
+    <div class="scEditorFieldMarker">
+        <div class="scEditorFieldLabel">Datasource:</div>
+        <div>
+            <select id="ll-datasources" class="scContentControl scCombobox"></select>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/scripts/live-list/field/field-base.js"></script>
+<script type="text/javascript" src="/scripts/live-list/field/complex-rendering-field.js"></script>
+<script>
+    fieldBase.observe('ll-fields', function () {
+        complexRenderingField.getValue();
+    });
+
+    document.getElementById('ll-renderings').onchange = function () {
+        complexRenderingField.loadDatasources(this.value);
+        complexRenderingField.setValue();
+    };
+
+    document.getElementById('ll-datasources').onchange = function () {
+        complexRenderingField.setValue();
+    };
+
+    complexRenderingField.loadRenderingDefs(true);
+
+    complexRenderingField.updateIframeDisplaySettings();
+</script>

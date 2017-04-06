@@ -1,0 +1,25 @@
+﻿---
+ID: "942bf05d-0420-4e13-86dc-edd69cde7415"
+Parent: "04a9ce58-db8c-4dd4-bbbc-230e803aa442"
+Template: "04a9ce58-db8c-4dd4-bbbc-230e803aa442"
+Path: /sitecore/templates/LiveList/Content Types/Live List Container/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{6CE81FAA-451A-42E5-B330-6C159F737527}"
+- ID: "63ed60ab-a1cb-4b31-a34f-8aeb3adaf39f"
+  Hint: Max Items On Page Load
+  Value: 10
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170304T052828Z
+    - ID: "cd59b66e-f158-48f3-b9d0-5a6063d5ee00"
+      Hint: Show more text
+      Value: Show more...
