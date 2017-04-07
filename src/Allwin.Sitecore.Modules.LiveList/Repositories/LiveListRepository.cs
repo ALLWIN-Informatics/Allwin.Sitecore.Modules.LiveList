@@ -12,6 +12,9 @@ using Sitecore.Data;
 using Allwin.Sitecore.Modules.LiveList.Consts;
 using Sitecore.Diagnostics;
 using Sitecore.Globalization;
+using System.Web;
+using System.Collections.Specialized;
+using Sitecore.Text;
 
 namespace Allwin.Sitecore.Modules.LiveList.Repositories
 {
@@ -52,6 +55,8 @@ namespace Allwin.Sitecore.Modules.LiveList.Repositories
                 maxItemsOnPageLoad = 10;
             }
 
+            var settingsItem = contextItem.Database.GetItem(SitecoreIDs.LiveListSettings);
+
             return new LiveListItemContainer
             {
                 Item = contextItem,
@@ -65,6 +70,7 @@ namespace Allwin.Sitecore.Modules.LiveList.Repositories
                     .Select(c => GetLiveListItem(c, language))
                     .Where(x => x != null),
                 ShowMoreText = contextItem[Templates.LiveListItemContainer.Fields.ShowMoreText],
+                UseDefaultCss = UseDefaultCss(settingsItem)
             };
         }
 
@@ -76,6 +82,20 @@ namespace Allwin.Sitecore.Modules.LiveList.Repositories
             var lastItemPlace = itemsList.ToList().FindIndex(x => x.ID == lastItem.ID) + 1;
 
             return itemsList.Skip(lastItemPlace).Take(numberOfItems).Select(c => GetLiveListItem(c, language)).Where(x => x != null);
+        }
+
+        /// <summary>
+        /// Uses the default CSS or not.
+        /// </summary>
+        private bool UseDefaultCss(Item settingsItem)
+        {            
+            if (settingsItem == null)
+            {
+                return false;
+            }
+
+            CheckboxField useDefaultCssField = settingsItem.Fields[Templates.LiveListSettings.Fields.UseDefaultCss];
+            return useDefaultCssField.Checked;
         }
 
         /// <summary>
@@ -97,13 +117,45 @@ namespace Allwin.Sitecore.Modules.LiveList.Repositories
                 Language = Language.Parse(language)
             };
 
+            var queryString = new UrlString(new NameValueCollection
+            {
+                {
+                    "livelist", "true"
+                }
+            });
+            
+
+            // Respect master database edit, preview and normal mode
+            if (contextItem.Database.Name == "master")
+            {
+                queryString.Add("sc_database", contextItem.Database.Name);
+            }
+
             string html;
-            var itemPath = string.Format("{0}?livelist=true", LinkManager.GetItemUrl(contextItem, urlOptions) ?? string.Empty);
+            var itemPath = string.Format("{0}?{1}" , LinkManager.GetItemUrl(contextItem, urlOptions) ?? string.Empty, queryString);
             
             using (var client = new WebClient())
             {
                 try
                 {
+                    // Pass the .ASPXAUTH to the request to respect master database edit, preview and normal mode 
+                    if (HttpContext.Current != null && HttpContext.Current.Request != null)
+                    {
+                        var authCookie = HttpContext.Current.Request.Cookies[Settings.AspxAuthCookieName];
+                        if (authCookie != null)
+                        {
+                            var cookies = new UrlString(new NameValueCollection
+                            {
+                                {
+                                    Settings.AspxAuthCookieName, authCookie.Value
+                                }
+                            });
+
+                            client.Headers = new WebHeaderCollection();
+                            client.Headers.Add(HttpRequestHeader.Cookie, cookies.ToString());
+                        }
+                    }
+                    
                     html = client.DownloadString(itemPath);
                 }
                 catch (Exception ex)

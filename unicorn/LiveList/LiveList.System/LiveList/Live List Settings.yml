@@ -1,0 +1,23 @@
+﻿---
+ID: "f5031289-8dfe-48a4-9acd-428397dafb4b"
+Parent: "a9014922-ba1c-47ca-85b1-865aa713a948"
+Template: "4d8ec07d-829b-4b8e-84e5-5f1cc46c8ed4"
+Path: /sitecore/system/Modules/LiveList/Live List Settings
+DB: master
+SharedFields:
+- ID: "316fb6b4-966f-4942-bcfb-8bf66663d95f"
+  Hint: Use Default CSS
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T071728Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

@@ -19,5 +19,7 @@ namespace Allwin.Sitecore.Modules.LiveList.Models
         public string Id { get; set; }
 
         public string ShowMoreText { get; set; }
+
+        public bool UseDefaultCss { get; set; }
     }
 }

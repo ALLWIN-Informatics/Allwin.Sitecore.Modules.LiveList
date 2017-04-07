@@ -178,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consts\Placeholders.cs" />
+    <Compile Include="Consts\Settings.cs" />
     <Compile Include="Controllers\LiveListComplexRenderingFieldController.cs" />
     <Compile Include="Models\Field\Option.cs" />
     <Compile Include="Models\Field\LiveListComplexRenderingField.cs" />

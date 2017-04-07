@@ -1,0 +1,22 @@
+﻿---
+ID: "4d8ec07d-829b-4b8e-84e5-5f1cc46c8ed4"
+Parent: "92d2ff58-4cdc-4f0b-8c9b-858435c941ee"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/LiveList/Content Types/Live List Settings
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Options.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{C913F195-4AD0-4DAA-B494-2F07DFD838F5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T071509Z

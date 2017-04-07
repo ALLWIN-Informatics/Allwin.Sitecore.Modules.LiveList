@@ -61,5 +61,13 @@ namespace Allwin.Sitecore.Modules.LiveList.Consts
         {
             public static readonly ID ID = new ID("{B4506005-AFDC-4F1A-BF6D-00252D007D07}");
         }
+
+        public struct LiveListSettings
+        {
+            public struct Fields
+            {
+                public static readonly ID UseDefaultCss = new ID("{316FB6B4-966F-4942-BCFB-8BF66663D95F}");
+            }
+        }
     }
 }

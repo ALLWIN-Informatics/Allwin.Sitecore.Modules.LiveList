@@ -1,9 +1,13 @@
 ﻿---
 ID: "a9014922-ba1c-47ca-85b1-865aa713a948"
 Parent: "08477468-d438-43d4-9d6a-6d84a611971c"
-Template: "14c6e3d7-b08c-4e89-80d3-a342cf24059d"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: /sitecore/system/Modules/LiveList
 DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Chats.png
 Languages:
 - Language: en
   Versions:

@@ -2,17 +2,20 @@
 @model Allwin.Sitecore.Modules.LiveList.Models.LiveListItemContainer
 
 @{
-    var alreadyIncluded = HttpContext.Current.Items["SignalR_Included"] != null;
+    var alreadyIncluded = HttpContext.Current.Items[Settings.AlreadyIncludedName] != null;
 }
 
 @if (!alreadyIncluded)
 {
-    <!-- Required for SingalR -->
     <script src="/scripts/live-list/jquery-1.6.4.min.js"></script>
     <script src="/scripts/live-list/jquery.signalR-2.2.1.js"></script>
     <script src="/signalr/hubs"></script>
 
-    <link href="/styles/live-list/live-list.css" rel="stylesheet" />
+    if (Model.UseDefaultCss)
+    {
+        <link href="/styles/live-list/live-list.css" rel="stylesheet" />
+    }
+
     <script type="text/javascript">
         function addLiveListItem(parentId, id, message) {
             var fullId = 'live-list-item-' + id;
@@ -28,7 +31,6 @@
     </script>
 }
 
-<!--Add script to update the page and send messages.-->
 <script type="text/javascript">
     jQuery(function () {
         var aggregator = jQuery.connection.liveListHub;
@@ -85,6 +87,6 @@
 </div>
 
 @{
-    // This helps that the signalR and dependent js files are only included once
-    HttpContext.Current.Items["SignalR_Included"] = true;
+    // This helps that the head is only included once
+    HttpContext.Current.Items[Settings.AlreadyIncludedName] = true;
 }
