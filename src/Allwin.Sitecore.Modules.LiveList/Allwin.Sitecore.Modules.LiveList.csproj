@@ -195,7 +195,9 @@
     <Compile Include="Repositories\ILiveListRepository.cs" />
     <Compile Include="Consts\SitecoreIDs.cs" />
     <Compile Include="Consts\Templates.cs" />
+    <Compile Include="Services\ILiveListFieldService.cs" />
     <Compile Include="Services\ILiveListService.cs" />
+    <Compile Include="Services\LiveListFieldService.cs" />
     <Compile Include="Services\LiveListService.cs" />
   </ItemGroup>
   <ItemGroup>
