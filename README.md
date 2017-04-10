@@ -67,7 +67,7 @@ After you installed everything you need create your own **Live Lists**. To creat
 	 1. Here the editors can create their own **Datasources** for the Live List items
 	 2. This folder contains items based on your custom templates
 
-The settings item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS ** or not not. Because by default the component has it's own style but you can overwrite it with your own.
+The settings item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS** or not not. Because by default the component has it's own style but you can overwrite it with your own.
 
 ### Sitecore 8.0 specialities
 
