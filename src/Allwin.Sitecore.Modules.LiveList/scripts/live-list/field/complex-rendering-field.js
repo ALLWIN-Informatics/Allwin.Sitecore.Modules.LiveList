@@ -7,7 +7,9 @@ complexRenderingField.loadRenderingDefs = function(init) {
 
         if (init) {
             var valueObj = complexRenderingField.get();
-            complexRenderingField.loadDatasources(valueObj.RenderingDefinition);
+            if (valueObj) {
+                complexRenderingField.loadDatasources(valueObj.RenderingDefinition);
+            }
         }
     });
 }
@@ -31,9 +33,10 @@ complexRenderingField.setValue = function() {
 
 complexRenderingField.getValue = function() {
     var valueObj = complexRenderingField.get();
-
-    document.getElementById('ll-renderings').value = valueObj.RenderingDefinition;
-    document.getElementById('ll-datasources').value = valueObj.Datasource;
+    if (valueObj) {
+        document.getElementById('ll-renderings').value = valueObj.RenderingDefinition;
+        document.getElementById('ll-datasources').value = valueObj.Datasource;
+    }
 }
 
 complexRenderingField.get = function() {

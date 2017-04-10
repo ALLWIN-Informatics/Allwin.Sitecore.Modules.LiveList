@@ -1,5 +1,11 @@
 # Allwin.Sitecore.Modules.LiveList
 
+## Compatible with the following versions
+
+ - Sitecore 8.0 MVC
+ - Sitecore 8.1 MVC
+ - Sitecore 8.2 MVC
+
 ## Purpose of the module
 
 We agreed upon a list module that can render almost anything, but we didn’t stop there and  added another functionality. To make this list update in real time for the viewer. 
@@ -17,8 +23,9 @@ We hope that the easy usage and the simple setup will help people set up this li
 
 ## How to install to Content Management environment
 
- 1. Install the Sitecore package with **Installation Wizard** (including items and files)
- 2. Add the `/sitecore/layout/Renderings/LiveList/LiveList` rendering to your Placeholder Settings where you want to use to make usable in **Experience Editor**
+ 1. **Compatible only with Sitecore MVC**
+ 2. Install the Sitecore package with **Installation Wizard** (including items and files)
+ 3. Add the `/sitecore/layout/Renderings/LiveList/LiveList` rendering to your Placeholder Settings where you want to use to make usable in **Experience Editor**
 
 ## How to install to Content Delivery environment
 
@@ -59,6 +66,16 @@ After you installed everything you need create your own **Live Lists**. To creat
  3. Datasources
 	 1. Here the editors can create their own **Datasources** for the Live List items
 	 2. This folder contains items based on your custom templates
+
+The settings item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS ** or not not. Because by default the component has it's own style but you can overwrite it with your own.
+
+### Sitecore 8.0 specialities
+
+If you would like to install the module for Sitecore 8.0 then you need to do some additional changes to make it work. Go to your `web.config` and:
+
+ 1. Add `targetFramework="4.5" requestValidationMode="2.0"` to `system.web/httpRuntime`
+ 2. Add the `<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />` to your appSettings
+ 
 
 ### Here is a tutorial about an older version with integrated in Habitat
 [![YouTube Video](https://img.youtube.com/vi/AZje4ROX4dc/0.jpg)](https://www.youtube.com/watch?v=AZje4ROX4dc)
