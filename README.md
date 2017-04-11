@@ -84,7 +84,7 @@ Need to be setup by developers or administrators. Here you need to setup the **R
 Here the editors can create their own **Datasources** for the **Live List items**. This folder contains items based on your custom templates.
 
 ### Global Settings
-The global setting item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS ** or not not. Because by default the component has it's own style but you can overwrite it with your own.
+The global setting item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS** or not not. Because by default the component has it's own style but you can overwrite it with your own.
 
 ### Sitecore 8.0 specialities
 
