@@ -50,31 +50,53 @@ We hope that the easy usage and the simple setup will help people set up this li
 
 After you installed everything you need create your own **Live Lists**. To create a new one you just need create an item from `/sitecore/templates/Branches/LiveList/Live List Folder` branch. Here you can find the following 3 folders:
 
- 1. Live Lists Folder
-	 1. Here you can create your **Live List Container** items, these will be your root items for your lists
-	 2. Live List Container
-		 1. Fields
-			 1. Max Items On Page Load - How many items you want to show after the page is loaded
-			 2. Title - Title of the module
-			 3. Show more text - Button text on the module
-		 2. Under this container you can create your **Live List Items**
-		 3. Live List Item fields
-				 1. Rendering - which rendering the editor wants to use from the **Live List Renderings** folder
-				 2. Datasource - which datasource the editor wants to use from the **Datasources** folder depending on the selected **Rendering**
- 2. Live List Renderings - for developers
-	 1. Here you need to setup the **Rendering Definitions** (which **Rendering** with which **Templates** is usable)
- 3. Datasources
-	 1. Here the editors can create their own **Datasources** for the Live List items
-	 2. This folder contains items based on your custom templates
+### Live Lists Folder
 
-The settings item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS** or not not. Because by default the component has it's own style but you can overwrite it with your own.
+Here you can create your **Live List Container** items, these will be your root items for your lists
+
+#### Live List Container
+
+##### Fields
+
+1. **Max Items On Page Load** - How many items you want to show after the page is loaded
+2. **Title** - Title of the module
+3. **Show more text** - Button text on the module
+
+In this container you can store your **Live List Items**
+
+#### Live List Item
+
+##### Fields
+
+1. **Rendering** - which rendering the editor wants to use from the **Live List Renderings** folder
+2. **Datasource** - which datasource the editor wants to use from the **Datasources** folder depending on the selected **Rendering**
+
+#### Live List Rendering Item
+
+Need to be setup by developers or administrators. Here you need to setup the **Rendering Definitions** (which **Rendering** with which **Templates** is usable)
+
+##### Fields
+
+ 1. **Rendering**
+ 2. **Allowed Templates**
+
+#### Datasources
+Here the editors can create their own **Datasources** for the **Live List items**. This folder contains items based on your custom templates.
+
+### Global Settings
+The global setting item is found here: `/sitecore/system/Modules/LiveList/Live List Settings`. You can setup here **Use Default CSS ** or not not. Because by default the component has it's own style but you can overwrite it with your own.
 
 ### Sitecore 8.0 specialities
 
 If you would like to install the module for Sitecore 8.0 then you need to do some additional changes to make it work. Go to your `web.config` and:
 
  1. Add `targetFramework="4.5" requestValidationMode="2.0"` to `system.web/httpRuntime`
- 2. Add the `<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />` to your appSettings
+ 2. If you get the following exception:
+ 
+
+> WebForms UnobtrusiveValidationMode requires a ScriptResourceMapping for 'jquery'. Please add a ScriptResourceMapping named jquery(case-sensitive).
+
+Then you need to add `<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />` to your `<appSettings>`.
  
 
 ### Here is a tutorial about an older version with integrated in Habitat
