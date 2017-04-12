@@ -1,7 +1,5 @@
 # Allwin.Sitecore.Modules.LiveList
 
-## Short Demo
-
 ![Short demo](/short_demo.gif?raw=true)
 
 ## Compatible with the following versions
